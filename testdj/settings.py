@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 """
 Django settings for testdj project.
 
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'testdj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'test',
+        'USER': 'test',
+        'PASSWORD': 'test123',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
