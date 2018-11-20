@@ -9,7 +9,7 @@
 		<a href="">新文章</a>
 	</h2>
 	{% for article in articles %}
-		<a href="">{{article.title}}</a>
+		<a href="{% url 'blog:article' article.id %}">{{article.title}}</a>
 		<br>
 	{% endfor %}
 </body>
