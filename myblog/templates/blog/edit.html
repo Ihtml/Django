@@ -11,16 +11,11 @@
 
 <form action="{% url 'blog:edit_action' %}"  method="post">
 {% csrf_token %}
-	{% if article %}
-	<input type="hidden" name="article_id" value="{{article.id | default: '0'}}">
-
+	<input type="hidden" name="article_id" value="{{article.id | default:'0'}}">
+	<!-- Django模板中出现了不存在的变量，不会报错，只会给个空值 -->
     <label>文章标题</label><input type="text" name="title" value="{{article.title}}"><br>
     <label>文章内容</label><input type="text" name="content" value="{{article.content}}" /><br>
-    {% else %}
-    <input type="hidden" name="article_id" value="0">
-    <label>文章标题</label><input type="text" name="title" ><br>
-    <label>文章内容</label><input type="text" name="content"/><br>
-    {% endif %}
+    
 <input type="submit" value="Submit">
 </form>
 </body>
