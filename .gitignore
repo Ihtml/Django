@@ -18,3 +18,4 @@ db.ini
 deploy_key_rsa
 
 .idea
+.DS_Store
