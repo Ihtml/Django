@@ -22,4 +22,12 @@ def getform(request):
     user_message.object_id = 'helloword2'
 
     user_message.save()
-    return render(request, 'message/message_form.html')
+
+    # message = None
+    # all_messages = UserMessage.objects.filter(name='Foo')
+    # if all_messages:
+    #     message = all_messages[0]
+
+    return render(request, 'message/message_form.html', {
+        'my_message': message
+    })
